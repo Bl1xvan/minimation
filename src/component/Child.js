@@ -1,9 +1,9 @@
 import React, {useState} from "react"
-import { useSpring, animated as a } from "react-spring"
+import { useSpring, animated as a} from "react-spring"
 
 const HelloWorld = ({childProp}) => {
     const animatedProps = useSpring({
-      from: {paddingTop: 10},
+      paddingTop: 0,
       to: {paddingTop: 200},
       config:{mass: 1, tension: 150, friction: 10}
     })
