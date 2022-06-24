@@ -17,7 +17,7 @@ const HelloWorld = ({childProp}) => {
   
     return (
     <div className="childcont">
-      {startAnimation && (<HelloWorld childProp={"I am a child!"}/>)}
+      <HelloWorld childProp={"I am a child!"}/>
       <button onClick={()=> setStartAnimation(!startAnimation)}>Now Click Me!</button>
     </div> 
     );
