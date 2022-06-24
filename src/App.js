@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import React, {useState} from "react"
 import './App.css';
+import Child from './component/Child'
+
+const HelloWorld = ({newProp}) => {
+  return(
+  <div className="container">
+  <h1>Hello World! {newProp}</h1>
+  </div>
+  )
+}
 
 function App() {
+
+  const [newProp, setNewProp] = useState("I'm a prop!")
+  const [clicked, setClicked] = useState(false);
+  const switchSentence = clicked ? `I'm a prop` : `I'm a changed prop`;
+  const sentenceFunction = () =>{
+    setClicked(!clicked)
+    setNewProp(switchSentence)
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <HelloWorld newProp={newProp}/>
+    <button onClick={sentenceFunction}>Click Me</button>
+    <Child />
+    </>
   );
 }
 
