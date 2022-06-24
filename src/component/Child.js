@@ -4,7 +4,7 @@ import { useSpring, animated as a } from "react-spring"
 const HelloWorld = ({childProp}) => {
     const animatedProps = useSpring({
       from: {paddingTop: 10},
-      paddingTop: 200,
+      to: {paddingTop: 200},
       config:{mass: 1, tension: 150, friction: 10}
     })
     return(<a.h2 style={{...animatedProps}}>{childProp}</a.h2>)
