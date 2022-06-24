@@ -3,7 +3,7 @@ import { useSpring, animated as a } from "react-spring"
 
 const HelloWorld = ({childProp}) => {
     const animatedProps = useSpring({
-      from: {paddingTop: 50},
+      from: {paddingTop: 10},
       paddingTop: 200,
       config:{mass: 1, tension: 150, friction: 10}
     })
